@@ -1,6 +1,8 @@
 # **WIPER CONTROL SYSTEM**
 ## **`OBJECTIVE:`**
-	 The main objective of this project is through ARM microcontroller to design a wiper control system. The project mainly insists on controlling the motion of wiper based on frequency and time period (in seconds).
+
+   The main objective of this project is through ARM microcontroller to design a wiper control system. The project mainly insists on controlling the motion of wiper 
+   based on frequency and time period (in seconds).
 
 ## **`BENEFITS:`**
 •	It is used in automatic wind shield wipers.
