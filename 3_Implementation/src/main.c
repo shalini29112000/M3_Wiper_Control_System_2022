@@ -114,17 +114,41 @@ int main(void)
     if(BUTTON_CHECK == PRESSED)
     {
     	//if pressed - turn led on
+    	HAL_Delay(2000);
     	HAL_GPIO_WritePin(Red_LED_GPIO_Port, Red_LED_Pin, SET);
     	HAL_Delay(2000);
+    	HAL_GPIO_WritePin(GPIOD, R1_LED, SET);
+    	if(BUTTON_CHECK == PRESSED)
+    	{
+    		//if the button is pressed for frequency 1Hz which is equal to 1s
+    		HAL_GPIO_WritePin(GPIOD, B1_LED, SET); // LED turn on
+    		HAL_Delay(1000);
+    		HAL_GPIO_WritePin(GPIOD, B1_LED, RESET);// led turn off
+    		//if the button is pressed for frequency 4Hz which is equal to 0.25s
+
+    		HAL_GPIO_WritePin(GPIOD, G1_LED, SET); // LED turn on
+    		HAL_Delay(250);
+    		HAL_GPIO_WritePin(GPIOD, G1_LED, RESET); // led turn off
+    		//if the button is pressed for frequency 4Hz which is equal to 0.125s
+    		HAL_GPIO_WritePin(GPIOD, O1_LED, SET); // LED turn on
+    		HAL_Delay(125);
+    		HAL_GPIO_WritePin(GPIOD, O1_LED, RESET); // led turn off
+    		HAL_GPIO_WritePin(Red_LED_GPIO_Port, Red_LED_Pin, SET);
+    		    	HAL_Delay(2000); // once again if the button is pressed
+    		    	HAL_GPIO_WritePin(GPIOD, R1_LED, RESET);// Red LED is turned off.
+
+    	}
     }
     else
     {
     	//if pressed - turn OFF LED
+    	HAL_Delay(2000);
     	HAL_GPIO_WritePin(Red_LED_GPIO_Port, Red_LED_Pin, RESET);
     	HAL_Delay(2000);
     }
   }
   for(;;);
+
   /* USER CODE END 3 */
 }
 
